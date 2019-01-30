@@ -1,0 +1,23 @@
+{
+ "align_labels_right": 0,
+ "creation": "2019-01-31 00:39:19.098311",
+ "custom_format": 1,
+ "default_print_language": "en",
+ "disabled": 0,
+ "doc_type": "Barcode Print",
+ "docstatus": 0,
+ "doctype": "Print Format",
+ "font": "Default",
+ "html": "<style>\n\t.print-format table, .print-format tr, \n\t.print-format td, .print-format div, .print-format p {\n\t\tvertical-align: middle;\n\t\tfont-size: 17px;\n\t\tmargin-left: 3mm;\n\t\tmargin-right: 1mm;\n\t\tmargin-top: 3.5mm;\n\t\tmargin-bottom: 0.75mm;\n\t\t\n\t}\n\t@media screen {\n\t\t.print-format {\n\t\t\twidth: 60mm;\n\t\t\tpadding: 0.5mm;\n\t\t\tmin-height: 12mm;\t\n\t\t}\n\t}\n</style>\n{% for n in range(doc.number_of_copies)%}\n<div style=\"overflow: hidden\">\n    <div style=\"float:left;\">\n     <img src=\"https://api.qrserver.com/v1/create-qr-code/?size=60x60&data={{doc.barcode}}\"/>\n    </div>\n    <div style=\" float:right;margin-top:3mm;\"><b>{{doc.item_name}}</b><br><b>{{doc.barcode}}</b>\n    </div>\n</div>\n{% endfor %}\n\t",
+ "idx": 0,
+ "line_breaks": 0,
+ "modified": "2019-01-31 00:39:19.098311",
+ "modified_by": "Administrator",
+ "module": "Barcode",
+ "name": "Jewellery Barcode Print",
+ "owner": "Administrator",
+ "print_format_builder": 0,
+ "print_format_type": "Server",
+ "show_section_headings": 0,
+ "standard": "Yes"
+}

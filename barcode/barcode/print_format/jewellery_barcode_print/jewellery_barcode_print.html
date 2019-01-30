@@ -1,0 +1,28 @@
+<style>
+	.print-format table, .print-format tr, 
+	.print-format td, .print-format div, .print-format p {
+		vertical-align: middle;
+		font-size: 17px;
+		margin-left: 3mm;
+		margin-right: 1mm;
+		margin-top: 3.5mm;
+		margin-bottom: 0.75mm;
+		
+	}
+	@media screen {
+		.print-format {
+			width: 60mm;
+			padding: 0.5mm;
+			min-height: 12mm;	
+		}
+	}
+</style>
+{% for n in range(doc.number_of_copies)%}
+<div style="overflow: hidden">
+    <div style="float:left;">
+     <img src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data={{doc.barcode}}"/>
+    </div>
+    <div style=" float:right;margin-top:3mm;"><b>{{doc.item_name}}</b><br><b>{{doc.barcode}}</b>
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,23 @@
+<style>
+	.print-format table, .print-format tr, 
+	.print-format td, .print-format div, .print-format p {
+		vertical-align: middle;
+		font-size: 16px;
+		margin-left: 2mm;
+		
+	}
+	@media screen {
+		.print-format {
+			width: 50mm;
+			padding: 0.5mm;
+			min-height: 25mm;	
+		}
+	}
+</style>
+{% for n in range(doc.number_of_copies)%}
+<p class="text-center">
+<b>{{doc.item_name}}</b><br>
+<img src="http://barcodes4.me/barcode/c128c/{{doc.barcode}}.png"/>
+<b>{{doc.barcode}}</b><br>
+</p>
+{% endfor %}
